@@ -1,0 +1,153 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+/* price */
+
+.price{
+    text-align: center;
+}
+
+.price__table{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.price__element{
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.price__element--best{
+    width: 280px;
+    padding: 35px 20px;
+    background-color: #FF7143;
+    --color-plan: rgb(255 255 255 / 75%);
+    --color-price: #fff;
+    --bg-cta: #9F3919;
+    --color-cta: #FFF;
+    --color-items: #fff;
+}
+
+
+.price__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.price__price{
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items {
+    /* Estilos para el contenido del card */
+    text-align: center;
+  }
+  
+  .price__image {
+    /* Estilos para la imagen */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
+    height: auto;
+  }
+  
+  .price__description {
+    /* Estilos para la descripción */
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .price__actions {
+    /* Estilos para los botones de acción */
+    margin-top: 20px;
+  }
+  
+  .price__btn-edit,
+  .price__btn-add,
+.price__btn-delete {
+  /* Estilos para los botones Editar y Eliminar */
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; /* Espacio entre los botones */
+}
+
+.price__btn-delete {
+  background-color: #5454D4;
+}
+
+.price__btn-edit {
+  background-color: #5454D4;
+}
+
+.price__btn-delete:hover {
+  background-color: #FF0000; /* Color rojo al colocar el cursor encima del botón Eliminar */
+}
+
+.price__btn-edit:hover {
+    background-color: #353585; /* Color rojo al colocar el cursor encima del botón Eliminar */
+  }
+
+  .price__btn-add {
+    background-color: #5454D4;
+  }
+  
+  .price__btn-add:hover {
+    background-color: #18ff4a; /* Color rojo al colocar el cursor encima del botón Eliminar */
+  }
+  
+  
+
+.price__cta{
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+
+@media (max-width:600px){
+
+    .price__element{
+        width: 90%;
+    }
+
+    .price__element--best{
+        width: 90%;
+        /* padding: 40px; */
+    }
+
+    .price__price{
+        font-size: 2rem;
+    }
+
+}

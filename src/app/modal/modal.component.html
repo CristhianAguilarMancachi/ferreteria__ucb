@@ -1,0 +1,24 @@
+<div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Agregar Producto</h2>
+        <button (click)="onCloseModal()">Cerrar</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div>
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="nombre" name="name" [(ngModel)]="newItem.name">
+          </div>
+          <div>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="price" [(ngModel)]="newItem.price">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button (click)="onAddItem()">Agregar</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,33 @@
+<section class="pedidos-container">
+    <h2 class="pedidos-title">Realizar Pedido</h2>
+  
+    <form class="pedidos-form">
+      <div class="form-field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+      </div>
+  
+      <div class="form-field">
+        <label for="telefono">Número de teléfono</label>
+        <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono" required>
+      </div>
+  
+      <div class="form-field">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" [(ngModel)]="correo" name="correo" required>
+      </div>
+  
+      <div class="form-field">
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" required>
+      </div>
+  
+      <div class="form-field">
+        <label for="producto">Producto</label>
+        <input type="text" id="producto" [(ngModel)]="producto" name="producto" required>
+      </div>
+  
+      <button type="submit" class="submit-button">Realizar Pedido</button>
+    </form>
+  </section>
+  
