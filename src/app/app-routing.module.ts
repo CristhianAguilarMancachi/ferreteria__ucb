@@ -4,6 +4,8 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { HomeComponent } from './home/home.component';
+import { AgregarComponent } from './agregar/agregar.component';
+import { ModificarComponent } from './modificar/modificar.component';
 
 const routes: Routes = [{
   path: '', 
@@ -20,7 +22,11 @@ const routes: Routes = [{
 {
   path: 'contactos', 
   component: ContactosComponent
-}];
+},
+{path:'add', component:AgregarComponent},
+{path:'edit/:id', component:ModificarComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,8 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { BannerComponent } from './banner/banner.component';
+import { AgregarComponent } from './agregar/agregar.component';
+import { ModificarComponent } from './modificar/modificar.component';
 
 
 const routes: Routes = [
@@ -52,7 +55,9 @@ const routes: Routes = [
     PedidosComponent,
     ContactosComponent,
     BannerComponent,
-    ModalComponent
+    ModalComponent,
+    AgregarComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +67,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {EquipoService, Equipo} from '../Services/equipo.service';
 import { ModalComponent } from '../modal/modal.component';
+import {Router} from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,29 +11,43 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./inventario.component.css']
 })
 export class InventarioComponent implements OnInit {
-  public items: any[] = [];
+  //varibale
+  ListarEquipo: Equipo[] | undefined;
 
-  public showModal = false;
-
-  constructor() { }
+  constructor(private EquipoService:EquipoService, private router:Router) { }
 
   ngOnInit(): void {
+    this.listarEquipo();
   }
 
-  public openModal(): void {
-    this.showModal = true;
+
+  listarEquipo()
+  {
+    this.EquipoService.getEquipos().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.ListarEquipo =<any> res;
+      },
+      error: (err) => console.log(err)
+    });
   }
 
-  public closeModal(): void {
-    this.showModal = false;
+
+  eliminar(id: string | undefined)
+  {
+    console.log('id a eliminar: '+id);
+    this.EquipoService.deleteEquipo(<string>id).subscribe(
+      res=>{
+        console.log('equipo eliminado');
+        this.listarEquipo();
+      },
+      err=> console.log(err)
+      );
   }
 
-  public addItem(newItem: any): void {
-    this.items.push(newItem);
-    this.closeModal();
+  modificar(id: string | undefined){
+    
+    this.router.navigate(['/edit/'+id]);
   }
 
-  public deleteItem(index: number): void {
-    this.items.splice(index, 1);
-  }
 }

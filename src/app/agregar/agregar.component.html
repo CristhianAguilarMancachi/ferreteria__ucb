@@ -1,0 +1,19 @@
+
+<div class="pedidos-container">
+    <h1 class="pedidos-title">Agregar productos</h1>
+    <form class="pedidos-form" action="#" method="POST">
+        <div class="form-field">
+            <label for="nombre">Nombre:</label>
+            <input [(ngModel)]="equipo.nombre" type="text" class="form-control" name="nombre" required>
+        </div>
+                
+                <div class="form-field">
+                    <label for="email">Precio del producto:</label>
+                    <input [(ngModel)]="equipo.precio" type="text" id="email" name="precio" required>
+                </div>
+                
+                <button (click)="agregar()" class="submit-button">Agregar</button>
+            </form>
+        </div>
+
+ 

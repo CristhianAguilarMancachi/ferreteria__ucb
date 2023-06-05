@@ -4,30 +4,30 @@
     <form class="pedidos-form">
       <div class="form-field">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+        <input [(ngModel)]="equipo.nombre" type="text" class="form-control" name="nombre">
       </div>
   
       <div class="form-field">
-        <label for="telefono">Número de teléfono</label>
-        <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono" required>
+        <label for="numero">Número de teléfono</label>
+        <input [(ngModel)]="equipo.numero" type="text" class="form-control" name="numero">
       </div>
   
       <div class="form-field">
         <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" [(ngModel)]="correo" name="correo" required>
+        <input [(ngModel)]="equipo.correo" type="text" class="form-control" name="correo">
       </div>
   
       <div class="form-field">
         <label for="direccion">Dirección</label>
-        <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" required>
+        <input [(ngModel)]="equipo.direccion" type="text" class="form-control" name="direccion">
       </div>
   
       <div class="form-field">
         <label for="producto">Producto</label>
-        <input type="text" id="producto" [(ngModel)]="producto" name="producto" required>
+        <input [(ngModel)]="equipo.producto" type="text" class="form-control" name="producto">
       </div>
   
-      <button type="submit" class="submit-button">Realizar Pedido</button>
+      <button (click)="agregar()" class="submit-button">Realizar Pedido</button>
     </form>
   </section>
   

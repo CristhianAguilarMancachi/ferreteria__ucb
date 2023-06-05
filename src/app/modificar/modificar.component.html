@@ -1,0 +1,19 @@
+
+<div class="pedidos-container">
+    <h1 class="pedidos-title">Editar Productos</h1>
+    <form class="pedidos-form" action="#" method="POST">
+        <div class="form-field">
+            <label for="nombre">Nombre:</label>
+            <input [(ngModel)]="equipo.nombre" type="text" class="form-control" name="nombre">
+        </div>
+                
+         <div class="form-field">
+            <label for="precio">Precio del Producto</label>
+             <input [(ngModel)]="equipo.precio" type="text" class="form-control" name="precio">
+        </div>
+                
+        <button (click)="modificar()" class="submit-button">Agregar</button>
+    </form>
+</div>
+
+

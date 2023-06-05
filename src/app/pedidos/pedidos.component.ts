@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
+import {EquipoService, Equipo2} from '../Services/equipo.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -7,22 +9,31 @@ import { Component } from '@angular/core';
   
 })
 export class PedidosComponent {
-  public nombre: string = '';
-  public telefono: string;
-  public correo: string = '';
-  public direccion: string = '';
-  public producto: string = '';
 
-  constructor() {
-    // Asignar valores iniciales si es necesario
-    this.nombre = '';
-    this.telefono = '';
-    this.correo = '';
-    this.direccion = '';
-    this.producto = '';
+  equipo: Equipo2={
+    id:'',
+    nombre:'',
+    numero:'',
+    correo:'',
+    direccion:'',
+    producto:''
+  };
+
+  constructor(private EquipoService:EquipoService, private router:Router) { }
+
+  ngOnInit(): void {
   }
 
-  submitPedido(): void {
-    // Lógica para enviar el pedido
+  agregar(){
+    delete this.equipo.id;
+
+    this.EquipoService.addEquipo2(this.equipo).subscribe();
+    this.equipo.nombre = '';
+    this.equipo.numero = '';
+    this.equipo.correo = '';
+    this.equipo.direccion = '';
+    this.equipo.producto = '';
+    this.router.navigate(['/pedidos']);
   }
+
 }

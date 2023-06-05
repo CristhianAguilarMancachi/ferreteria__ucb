@@ -1,25 +1,22 @@
 <section class="price container">
-    <h2 class="subtitle">Inventario de la Ferreteria UCB</h2>
-  
-    <div class="price__table">
-      <div *ngFor="let item of items; let i = index" class="price__element price__element--best">
-        <p class="price__name">{{ item.name }}</p>
-        <h3 class="price__price">{{ item.price }}</h3>
-  
-        <div class="price__items">
-          <!-- Imagen predeterminada -->
-          <img src="../../assets/images/card_herramientas.jpg" alt="Imagen del producto" class="price__image">
-        </div>
-  
-        <div class="price__actions">
-          <button class="price__btn-edit" (click)="openModal()">Editar</button>
-          <button class="price__btn-delete" (click)="deleteItem(i)">Eliminar</button>
-        </div>
+  <h2 class="subtitle">Inventario de la Ferreteria UCB</h2>
+
+  <div class="price__table">
+    <div *ngFor="let equipo of ListarEquipo" class="price__element price__element--best">
+      <p class="price__name">{{ equipo.nombre }}</p>
+      <h3 class="price__price">{{ equipo.precio }}</h3>
+
+      <div class="price__items">
+        <!-- Imagen predeterminada -->
+        <img src="../../assets/images/card_herramientas.jpg" alt="Imagen del producto" class="price__image">
+      </div>
+
+      <div class="price__actions">
+        <button class="price__btn-edit" (click)="modificar(equipo.id)">Editar</button>
+        <button class="price__btn-delete" (click)="eliminar(equipo.id)">Eliminar</button>
       </div>
     </div>
+  </div>
   <br>
-    <button class="price__btn-add" (click)="openModal()">Añadir Producto</button>
-  </section>
-  
-  <app-modal *ngIf="showModal" (newItemAdded)="addItem($event)" (closeModal)="closeModal()"></app-modal>
-  
+  <button class="price__btn-add" routerLink="/add">Añadir Producto</button>
+</section>
